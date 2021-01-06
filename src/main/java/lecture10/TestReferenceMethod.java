@@ -1,8 +1,8 @@
 package lecture10;
 
-import com.sun.xml.internal.ws.api.ha.StickyFeature;
-
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 public class TestReferenceMethod {
     public static void main(String[] args) {
@@ -18,5 +18,23 @@ public class TestReferenceMethod {
         }
 
         //Object Method Reference
+        StudentMethodReference[] studentNames = {new StudentMethodReference("Petar"), new StudentMethodReference("Georgi")};
+
+        CompareObjects compareObjects = new CompareObjects();
+
+        Arrays.sort(studentNames, compareObjects::compareByNames);
+
+        for (StudentMethodReference student:studentNames){
+            System.out.println(student.getName());
+        }
+
+        //Arbitrary Method Reference - internal methods
+        List<String> names = new ArrayList<>();
+        names.add("Dimitar");
+        names.add("Albena");
+        names.add("Kristina");
+
+        names.forEach(System.out::println);
+
     }
 }

@@ -6,9 +6,14 @@ import lombok.Getter;
 
 public class StudentMethodReference {
     private double avgGrade;
+    private String name;
 
     public StudentMethodReference(double avgGrade) {
         this.avgGrade = avgGrade;
+    }
+
+    public StudentMethodReference(String name) {
+        this.name = name;
     }
 
     public static int compareGrades (StudentMethodReference a, StudentMethodReference b){
