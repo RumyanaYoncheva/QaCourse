@@ -1,6 +1,8 @@
 package lecture10MainExample;
 
-import java.util.List;
+import lombok.Getter;
+
+@Getter
 
 public class Product {
     private String name;
