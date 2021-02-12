@@ -2,6 +2,8 @@ package courseProject;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
 
@@ -17,6 +19,19 @@ public class driverFactory {
 
         WebDriverManager.getInstance(FirefoxDriver.class).setup();
         WebDriver driver = new FirefoxDriver(options);
+
+        driver.manage().timeouts().implicitlyWait(implicitWait, TimeUnit.SECONDS);
+
+        return driver;
+    }
+
+    public static WebDriver getChromeDriver (int implicitWait){
+        ChromeOptions options = new ChromeOptions();
+        options.addArguments(IGNORE_CERTIFICATE, "--window-size=1366,768");
+//        options.addArguments("--headless");
+
+        WebDriverManager.getInstance(ChromeDriver.class).setup();
+        WebDriver driver = new ChromeDriver(options);
 
         driver.manage().timeouts().implicitlyWait(implicitWait, TimeUnit.SECONDS);
 
