@@ -1,0 +1,10 @@
+pipeline{
+    agetnt any
+    tools{
+        maven 'maven'
+        jdk 'jdk-1.8.0_271'
+    }
+    parameters{
+        choice(name: 'APP_VERSION', choices)
+    }
+}
