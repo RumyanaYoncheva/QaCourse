@@ -28,7 +28,6 @@ public class driverFactory {
     public static WebDriver getChromeDriver (int implicitWait){
         ChromeOptions options = new ChromeOptions();
         options.addArguments(IGNORE_CERTIFICATE, "--window-size=1366,768");
-//        options.addArguments("--headless");
 
         WebDriverManager.getInstance(ChromeDriver.class).setup();
         WebDriver driver = new ChromeDriver(options);

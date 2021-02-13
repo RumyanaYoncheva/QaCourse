@@ -46,15 +46,8 @@ public class BasePage {
 
     @FindBy(id = "yfin-usr-qry" )
     private WebElement searchBar;
-
-//    @FindBy(xpath = "//*[@id=\"header-search-form\"]/div[2]/div[1]/div/ul[1]/li[1]")
-
-//    @FindBy(xpath = "//*[@id=\"header-search-form\"]/div[2]/div[1]/div/ul[1]/li[1]/div[1]")
-//    private WebElement firstOptionFromSuggested;
-
     @FindBy(xpath = "//*[@id=\"header-desktop-search-button\"]")
     private WebElement clickSearch;
-
     public void searchBar(String searchWord){
         searchBar.sendKeys(searchWord);
 //        firstOptionFromSuggested.click();

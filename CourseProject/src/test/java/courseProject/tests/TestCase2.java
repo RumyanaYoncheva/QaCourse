@@ -50,12 +50,10 @@ public class TestCase2 extends testUtil {
         if(value.equalsIgnoreCase(valueToCompare)){
             log.info("True");
         }
-
     }
 
     @AfterSuite
     public void tearDownDriver(){
         driverTest.quit();
     }
-
 }

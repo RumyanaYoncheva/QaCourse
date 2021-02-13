@@ -20,9 +20,8 @@ public class SearchResult extends BasePage {
         search.searchBar(company);
     }
 
-    @FindBy(xpath = "//*[@id='quote-nav']/ul/li[4]/a/span")
+    @FindBy(xpath = "///*[@id=\"quote-nav\"]/ul/li[4]/a/span")
     WebElement selectStatistics;
-
     public void goToStatistics (){
         selectStatistics.click();
     }

@@ -4,8 +4,6 @@ import courseProject.driverFactory;
 import lombok.extern.slf4j.Slf4j;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebDriverException;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.*;
 
 import java.io.FileInputStream;
@@ -32,24 +30,6 @@ public class testUtil {
         }
     }
 
-//    @Parameters("browser")
-//    @BeforeClass
-//    public void beforeTest(String browser){
-//        if(browser.equalsIgnoreCase("firefox")){
-//            driver = driverFactory.getFirefoxDriver(implicitWait);
-//        }else if (browser.equalsIgnoreCase("chrome")){
-//            driver = driverFactory.getChromeDriver(implicitWait);
-//        }
-//        driver.get(url);
-//    }
-
-//    @Parameters("browser")
-//    private void setUpBrowserDriverFirefox(){
-//
-//         driver = driverFactory.getFirefoxDriver(implicitWait);
-//    }
-//
-
     @BeforeTest
     @Parameters ({"browserType"})
     public void login(String browserType){
@@ -66,25 +46,9 @@ public class testUtil {
             log.info(e.getMessage());
         }
     }
-//    private void setUpBrowserDriverChrome(){
-//        driver = driverFactory.getChromeDriver(implicitWait);
-//    }
     private void loadUrl(){
         driver.get(url);
     }
-
-
-//    @BeforeTest
-//    public void initTestFireFox(){
-//        setUpBrowserDriverFirefox();
-//        loadUrl();
-//    }
-
-//    @BeforeTest
-//    public void initTestChrome(){
-//        setUpBrowserDriverChrome();
-//        loadUrl();
-//    }
 
     @AfterTest
     public void tearDownDriver(){
